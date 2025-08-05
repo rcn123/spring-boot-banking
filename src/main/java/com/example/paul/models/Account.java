@@ -17,6 +17,7 @@ public class Account {
 
     private String sortCode;
 
+
     private String accountNumber;
 
     private double currentBalance;
@@ -26,6 +27,10 @@ public class Account {
     private String ownerName;
 
     private transient List<Transaction> transactions;
+
+
+
+    
 
     protected Account() {}
     public Account(String bankName, String ownerName, String generateSortCode, String generateAccountNumber, double currentBalance) {
@@ -52,14 +57,20 @@ public class Account {
         this.bankName = bankName;
         this.ownerName = ownerName;
         this.transactions = transactions;
+
+    } 
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+    
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+        public void setTransactions(List<Transaction> transactions)
     }
 
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
+ 
     public String getSortCode() {
         return sortCode;
     }
@@ -84,9 +95,8 @@ public class Account {
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
-    public String getBankName() {
-        return bankName;
-    }
+
+
     public void setBankName(String bankName) {
         this.bankName = bankName;
     }
